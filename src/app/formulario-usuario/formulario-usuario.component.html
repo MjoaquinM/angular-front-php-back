@@ -1,0 +1,20 @@
+<div [hidden]="submitted">
+    <form class="usuario-form" [formGroup]="usuarioForm" (ngSubmit)="onSubmit()" >
+        <mat-form-field class="example-full-width">
+            <input type="text" matInput placeholder="Nombre" value="" formControlName="nombre">
+        </mat-form-field>
+        <mat-form-field cass="example-full-width">
+            <input type="password" matInput placeholder="Contraseña" value="" formControlName="contrasenia">
+        </mat-form-field>
+        <button mat-icon-button [disabled]="!usuarioForm.valid" >
+            <mat-icon>send</mat-icon>
+        </button>
+    
+        <div *ngIf="cadenaAux"><mat-icon>mobile screen share
+        </mat-icon></div>
+    
+        <p>Valores del formulario: {{ usuarioForm.value | json }}</p>
+        <p>Estado del formulario: {{ usuarioForm.status | json }}</p>
+        
+    </form>
+</div>
